@@ -1,0 +1,20 @@
+
+<h3>Users</h3>
+<a href="/users/add" class="btn btn-success btn-sm">
+  <i class="glyphicon glyphicon-plus"></i>
+  <span>Add user</span>
+</a>
+
+{{range .}}
+<div class="media">
+  <div class="media-left">
+    <img src="{{if .ImageURL}}{{.ImageURL}}{{else}}https://placebear.com/g/200/300{{end}}">
+  </div>
+  <div class="media-body">
+    <h4><a href="/users/{{.ID}}">{{.Name}}</a></h4>
+    <p>{{.Email}}</p>
+  </div>
+</div>
+{{else}}
+<p>No users found.</p>
+{{end}}

@@ -18,12 +18,13 @@
       <div class="navbar-brand">Awesome Company</div>
     </div>
 
-    <!--<ul class="nav navbar-nav">
+    <ul class="nav navbar-nav">
+      <li><a href="/admin">Admin</a></li>
       <li><a href="/books">Books</a></li>
       {{if .AuthEnabled}}
         <li><a href="/books/mine">My Books</a></li>
       {{end}}
-    </ul>-->
+    </ul>
 
     <!-- [START auth] -->
     {{if .AuthEnabled}}
@@ -46,8 +47,8 @@
     <!-- [END auth] -->
   </div>
 </div>
-<!--<div class="container">
+<div class="container">
   {{template "body" .Data}}
-</div>-->
+</div>
 </body>
 </html>

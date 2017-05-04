@@ -33,9 +33,12 @@ import (
 
 var (
 	// See template.go
-	listTmpl   = parseTemplate("list.html")
-	editTmpl   = parseTemplate("edit.html")
-	detailTmpl = parseTemplate("detail.html")
+	adminTmpl    = parseTemplate("admin.html")
+	homeTmpl     = parseTemplate("home.html")
+	editUserTmpl = parseTemplate("editUser.html")
+	listTmpl     = parseTemplate("list.html")
+	editTmpl     = parseTemplate("edit.html")
+	detailTmpl   = parseTemplate("detail.html")
 )
 
 func main() {
@@ -52,9 +55,15 @@ func registerHandlers() {
 	// r.Handle("/", http.RedirectHandler("/books", http.StatusFound))
 
 	r.Methods("GET").Path("/home").
+		Handler(appHandler(homeHandler))
+
+	r.Methods("GET").Path("/admin").
+		Handler(appHandler(adminHandler))
+	r.Methods("GET").Path("/users/add").
+		Handler(appHandler(addUserHandler))
+
+	r.Methods("GET").Path("/books").
 		Handler(appHandler(listHandler))
-	// r.Methods("GET").Path("/books").
-	// 	Handler(appHandler(listHandler))
 
 	r.Methods("GET").Path("/books/mine").
 		Handler(appHandler(listMineHandler))
@@ -93,6 +102,14 @@ func registerHandlers() {
 	// Log all requests using the standard Apache format.
 	http.Handle("/", handlers.CombinedLoggingHandler(os.Stderr, r))
 	// [END request_logging]
+}
+
+func homeHandler(w http.ResponseWriter, r *http.Request) *appError {
+	return homeTmpl.Execute(w, r, nil)
+}
+
+func adminHandler(w http.ResponseWriter, r *http.Request) *appError {
+	return adminTmpl.Execute(w, r, nil)
 }
 
 // listHandler displays a list with summaries of books in the database.
@@ -144,6 +161,10 @@ func detailHandler(w http.ResponseWriter, r *http.Request) *appError {
 	}
 
 	return detailTmpl.Execute(w, r, book)
+}
+
+func addUserHandler(w http.ResponseWriter, r *http.Request) *appError {
+	return editUserTmpl.Execute(w, r, nil)
 }
 
 // addFormHandler displays a form that captures details of a new book to add to
