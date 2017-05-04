@@ -71,7 +71,7 @@ func init() {
 	// More options can be set, see the google package docs for details:
 	// http://godoc.org/golang.org/x/oauth2/google
 	//
-	// DB, err = configureDatastoreDB("go-bookshelf-165815")
+	DB, err = configureDatastoreDB("gae-auth-poc")
 	// [END datastore]
 
 	if err != nil {
@@ -96,8 +96,8 @@ func init() {
 	// You will also need to update OAUTH2_CALLBACK in app.yaml when pushing to
 	// production.
 	//
-	clientID := "23730740155-2m20jpg1kb5pifiq97hg0ssr547gf2ma.apps.googleusercontent.com"
-	clientSec := "0lYDwz5Id9pYYVUtYxw7iRhC"
+	clientID := "1067980372167-njfalvlb9ij4jp8a8nks34d4bj8snqt1.apps.googleusercontent.com"
+	clientSec := "0OMd-upHtjegJfuLMHJVSX6e"
 	OAuthConfig = configureOAuthClient(clientID, clientSec)
 	// [END auth]
 

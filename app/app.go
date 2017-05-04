@@ -28,7 +28,7 @@ import (
 
 	"google.golang.org/appengine"
 
-	"github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf"
+	"github.com/vnsgbt/bookshelf"
 )
 
 var (

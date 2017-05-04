@@ -3,4 +3,4 @@ env: flex
 api_version: 1
 
 env_variables:
-  OAUTH2_CALLBACK: https://go-bookshelf-165815.appspot.com/oauth2callback
+  OAUTH2_CALLBACK: https://gae-auth-poc.appspot.com/oauth2callback

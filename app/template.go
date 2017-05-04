@@ -11,7 +11,7 @@ import (
 	"net/http"
 	"path/filepath"
 
-	"github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf"
+	"github.com/vnsgbt/bookshelf"
 )
 
 // parseTemplate applies a given file to the body of the base template.

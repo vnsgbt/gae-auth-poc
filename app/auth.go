@@ -16,7 +16,7 @@ import (
 	"github.com/satori/go.uuid"
 	"google.golang.org/api/plus/v1"
 
-	"github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf"
+	"github.com/vnsgbt/bookshelf"
 )
 
 const (
